@@ -4,7 +4,8 @@
   "description": "Spotify playlist to json",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "fetch": "node index.js",
+    "format": "node format.js"
   },
   "author": "manaus_t",
   "license": "MIT",
