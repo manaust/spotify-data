@@ -5,7 +5,7 @@ let i = 0;
 
 const writeToFile = (json) => {
   console.log("Writing json to file...");
-  fs.writeFile(`output/formatted.json`, JSON.stringify(json), "utf8", (err) => {
+  fs.writeFile(`output/songs.json`, JSON.stringify(json), "utf8", (err) => {
     if (err) {
       console.error("An error occured while writing JSON to file.");
       return;
@@ -20,8 +20,23 @@ while (true) {
     for (let j = 0; j < tracks.length; j++) {
       let currTrack = tracks[j].track;
 
+      const large = currTrack.album.images.filter((obj) => {
+        return obj.height === 640;
+      })[0];
+
+      const medium = currTrack.album.images.filter((obj) => {
+        return obj.height === 300;
+      })[0];
+
+      const small = currTrack.album.images.filter((obj) => {
+        return obj.height === 64;
+      })[0];
+
+      currTrack.thumbnail_large = large.url;
+      currTrack.thumbnail_medium = medium.url;
+      currTrack.thumbnail_small = small.url;
+
       currTrack.artist = currTrack.artists[0].name;
-      currTrack.thumbnails = currTrack.album.images;
       currTrack.release_date = currTrack.album.release_date;
       currTrack.album = currTrack.album.name;
 
