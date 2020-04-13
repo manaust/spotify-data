@@ -26,7 +26,6 @@ while (true) {
       currTrack.album = currTrack.album.name;
 
       delete currTrack.disc_number;
-      delete currTrack.popularity;
       delete currTrack.preview_url;
       delete currTrack.track_number;
       delete currTrack.video_thumbnail;
