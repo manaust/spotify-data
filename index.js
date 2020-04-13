@@ -56,10 +56,13 @@ const fetchAll = async () => {
   let i = 0;
   while (true) {
     const playlist = await getTracks(token, i);
-    if (playlist.items.length == 0) {
+    const items = playlist.items;
+
+    if (items.length == 0) {
       return;
     }
-    writeToFile(playlist.items, i);
+
+    writeToFile(items, i);
     i++;
   }
 };
