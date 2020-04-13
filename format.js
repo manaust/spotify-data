@@ -5,7 +5,7 @@ let i = 0;
 
 const writeToFile = (json) => {
   console.log("Writing json to file...");
-  fs.writeFile(`output/songs.json`, JSON.stringify(json), "utf8", (err) => {
+  fs.writeFile(`api/songs.json`, JSON.stringify(json), "utf8", (err) => {
     if (err) {
       console.error("An error occured while writing JSON to file.");
       return;
@@ -16,7 +16,7 @@ const writeToFile = (json) => {
 
 while (true) {
   try {
-    const tracks = JSON.parse(fs.readFileSync(`output/output${i}.json`));
+    const tracks = JSON.parse(fs.readFileSync(`api/output${i}.json`));
     for (let j = 0; j < tracks.length; j++) {
       let currTrack = tracks[j].track;
 

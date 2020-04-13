@@ -37,18 +37,13 @@ const getTracks = async (token, i) => {
 
 const writeToFile = (json, i) => {
   console.log("Writing json to file...");
-  fs.writeFile(
-    `output/output${i}.json`,
-    JSON.stringify(json),
-    "utf8",
-    (err) => {
-      if (err) {
-        console.error("An error occured while writing JSON to file.");
-        return;
-      }
-      console.log("JSON file has been saved.");
+  fs.writeFile(`api/output${i}.json`, JSON.stringify(json), "utf8", (err) => {
+    if (err) {
+      console.error("An error occured while writing JSON to file.");
+      return;
     }
-  );
+    console.log("JSON file has been saved.");
+  });
 };
 
 const fetchAll = async () => {
