@@ -1,2 +1,2 @@
-# spotify-data
-Downloads a playlist as json
+# Spotify playlist script for Satanica's Metalcodex
+Node.js script that fetches and formats a playlist as JSON
