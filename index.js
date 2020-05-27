@@ -22,7 +22,7 @@ const getToken = async () => {
 const getTracks = async (token, i) => {
   console.log("Fetching tracks...");
   const res = await fetch(
-    `https://api.spotify.com/v1/playlists/3IbpLQIpxm4pAAOrhmdUfu/tracks?offset=${
+    `https://api.spotify.com/v1/playlists/58SYxmrrBNQXKvzxXVA04X/tracks?offset=${
       i * 100
     }`,
     {
