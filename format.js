@@ -36,6 +36,12 @@ while (true) {
       currTrack.thumbnail_medium = medium.url;
       currTrack.thumbnail_small = small.url;
 
+      if (currTrack.name.indexOf(" -") != -1) {
+        currTrack.name = currTrack.name.substring(
+          0,
+          currTrack.name.indexOf(" -")
+        );
+      }
       currTrack.artist = currTrack.artists[0].name;
       currTrack.release_date = currTrack.album.release_date;
       currTrack.album = currTrack.album.name;
